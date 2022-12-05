@@ -1,0 +1,135 @@
+*:focus {
+    border: 2px solid #191919;
+}
+
+body {
+    font-family:'Courier New', Courier, monospace;
+    background-color: aliceblue;
+}
+
+
+header {
+    background-color: #f3663f;
+}
+
+ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+li a:hover, a:focus {
+    color:blue;
+}
+
+.imagesService {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-content: center;
+}
+
+.imagesService img {
+    border: 2px solid #f3663f;
+    height: auto;
+}
+
+.nav_item {
+    color: #191919;
+    text-decoration: none;
+    font-size: larger;
+    padding: 4px;
+}
+
+a.skip {
+    background-color: white;
+    position: absolute;
+    top: -50px;
+}
+
+a.skip:focus {
+    top: 15px;
+}
+
+/* change the styling of current page on the navigation */
+body.home a.home,
+body.eurotrip a.eurotrip,
+body.servicetrip a.servicetrip {
+    color: #191919;
+    text-decoration: underline;
+    background-color: white;
+}
+
+nav a:visited{
+    color: #191919;
+}
+
+.thomas {
+    display: block;
+    margin: auto;
+    width: 60%;
+}
+
+.imagesEuro {
+    display: grid;
+    grid-template-columns: 1fr;
+    column-gap: 20px;
+    row-gap: 50px;
+    align-items: center;
+}
+
+img {
+    max-width: 100%;
+    height:auto;
+}
+
+.imagesEuro img {
+    border: 2px solid #f3663f;
+}
+
+footer {
+    background-color: #f3663f;
+}
+
+@media screen and (min-width: 800px) {
+    .imagesEuro {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    img.item3 {
+        grid-column: 1 / -1;
+    }
+
+    .imagesService {
+        flex-direction: row;
+        justify-content: center;
+    }
+    
+    .imagesService img {
+        max-width: 45%;
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    .imagesEuro {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .imagesService {
+        flex-direction: row;
+        justify-content: center;
+    }
+    
+    .imagesService img {
+        max-width: 30%;
+    }
+
+    img.item3 {
+        flex-grow: 8;
+    }
+}
