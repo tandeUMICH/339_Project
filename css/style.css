@@ -118,6 +118,8 @@ a.skip:focus {
 p.about {
     margin: 5%;
     font-size: 17px;
+    padding: 4px;
+    border: 4px dashed #191919;
 }
 
 img {
