@@ -7,36 +7,30 @@ body {
     background-color: aliceblue;
 }
 
+.title {
+    font-size: 30px;
+    text-align: center;
+}
+
+h1 {
+    font-size: 26px;
+    font-weight: bold;
+    padding-left: 5%;
+    padding-top: 8px;
+}
+
 
 header {
     background-color: #f3663f;
+    border: 2px solid black;
 }
 
-ul {
+nav ul {
     display: flex;
     flex-direction: column;
     align-items: center;
     list-style: none;
-}
-
-a {
-    text-decoration: none;
-}
-
-li a:hover, a:focus {
-    color:blue;
-}
-
-.imagesService {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    align-content: center;
-}
-
-.imagesService img {
-    border: 2px solid #f3663f;
-    height: auto;
+    border: 2px solid black;
 }
 
 .nav_item {
@@ -44,16 +38,15 @@ li a:hover, a:focus {
     text-decoration: none;
     font-size: larger;
     padding: 4px;
+    margin: 3px;
+    font-weight: bold;
+    text-align: center;
+    border: 2px hidden #191919;
 }
 
-a.skip {
-    background-color: white;
-    position: absolute;
-    top: -50px;
-}
-
-a.skip:focus {
-    top: 15px;
+.nav_item:focus, .nav_item:hover {
+    color:blue;
+    text-decoration: overline underline 2px;
 }
 
 /* change the styling of current page on the navigation */
@@ -69,6 +62,44 @@ nav a:visited{
     color: #191919;
 }
 
+
+a {
+    text-decoration: none;
+}
+
+a.skip {
+    background-color: white;
+    position: absolute;
+    top: -50px;
+}
+
+a.skip:focus {
+    top: 15px;
+}
+
+.imagesService {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 4px;
+    margin-bottom: 8px;
+}
+
+.column img {
+    margin-top: 8px;
+    vertical-align: middle;
+}
+
+.column {
+    flex: 100%;
+    max-width: 100%;
+    padding: 0 4px;
+}
+
+.column p {
+    padding: 2px;
+    background-color: #d3d3d3;
+}
+
 .thomas {
     display: block;
     margin: auto;
@@ -81,6 +112,13 @@ nav a:visited{
     column-gap: 20px;
     row-gap: 50px;
     align-items: center;
+    margin-left: 2%;
+    margin-right: 2%;
+}
+
+p.about {
+    margin: 5%;
+    font-size: 17px;
 }
 
 img {
@@ -94,25 +132,52 @@ img {
 
 footer {
     background-color: #f3663f;
+    text-align: center;
+    border: 2px solid black;
+    font-weight: bold;
 }
 
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 700px) {
     .imagesEuro {
         grid-template-columns: 1fr 1fr;
+        margin-left: 5%;
+        margin-right: 5%;
+        margin-bottom: 2%;
     }
 
-    img.item3 {
+    .imagesEuro .item3 {
         grid-column: 1 / -1;
     }
 
-    .imagesService {
-        flex-direction: row;
-        justify-content: center;
+    .imagesEuro .item7 {
+        grid-row: 5 / 5;
+        grid-column: 2 / 2;
     }
-    
-    .imagesService img {
-        max-width: 45%;
+
+    .imagesEuro .item8 {
+        grid-row: 5 / 5;
+        grid-column: 1;
     }
+
+    .imagesEuro .item10 {
+        grid-column: 1 / -1;
+    }
+
+    .column {
+        flex: 50%;
+        max-width: 50%;
+    }
+
+    .thomas {
+        max-width: 40%;
+    }
+
+    nav ul {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        justify-items: center;
+    }
+
 }
 
 @media screen and (min-width: 1000px) {
@@ -120,16 +185,64 @@ footer {
         grid-template-columns: 1fr 1fr 1fr;
     }
 
-    .imagesService {
-        flex-direction: row;
-        justify-content: center;
-    }
-    
-    .imagesService img {
-        max-width: 30%;
+    .imagesEuro img {
+        border-width: 5px;
     }
 
-    img.item3 {
-        flex-grow: 8;
+    .imagesEuro .item9 {
+        grid-area: 1 / 3 / 1 / 3;
+    }
+    
+    .column {
+        flex: 25%;
+        max-width: 25%;
+    }
+
+    .thomas {
+        margin-left: 50%;
+        margin-right: 5%;
+    }
+
+    .column > div{
+        position: relative;
+    }
+
+    .column p {
+        position: absolute;
+        visibility: hidden;
+        top: 50%;
+        text-align: center;
+        width: 100%;
+
+    }
+
+    .column div:focus p, .column div:hover p{
+        visibility: visible;
+    }
+
+    .column div:focus img, .column div:hover img{
+        filter: brightness(30%)
+    }
+
+
+
+    p.about {
+        position: absolute;
+        margin-right: 53%;
+        margin-top: 8%;
+        font-size: 20px;
+    }
+
+
+
+    nav ul {
+        display: grid;
+        grid-template-columns: 15% 15% 15%;
+        justify-items: center;
+    }
+
+    .nav_item {
+        padding-left: 10px;
+        padding-right: 10px;
     }
 }
