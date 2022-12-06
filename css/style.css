@@ -45,7 +45,6 @@ nav ul {
 }
 
 .nav_item:focus, .nav_item:hover {
-    color:blue;
     text-decoration: overline underline 2px;
 }
 
@@ -84,7 +83,7 @@ a.skip:focus {
     margin-bottom: 8px;
 }
 
-.column img {
+.column div {
     margin-top: 8px;
     vertical-align: middle;
 }
@@ -111,7 +110,7 @@ a.skip:focus {
     grid-template-columns: 1fr;
     column-gap: 20px;
     row-gap: 50px;
-    align-items: center;
+    align-items: top;
     margin-left: 2%;
     margin-right: 2%;
 }
@@ -143,10 +142,14 @@ footer {
         margin-left: 5%;
         margin-right: 5%;
         margin-bottom: 2%;
+        justify-items: center;
     }
+
+    
 
     .imagesEuro .item3 {
         grid-column: 1 / -1;
+        max-width: 80%;
     }
 
     .imagesEuro .item7 {
@@ -161,6 +164,7 @@ footer {
 
     .imagesEuro .item10 {
         grid-column: 1 / -1;
+        max-width: 70%;
     }
 
     .column {
@@ -181,6 +185,38 @@ footer {
 }
 
 @media screen and (min-width: 1000px) {
+    .column {
+        flex: 25%;
+        max-width: 25%;
+    }
+
+    .thomas {
+        margin-left: 50%;
+        margin-right: 5%;
+    }
+
+    .column > div {
+        position: relative;
+    }
+
+    .column p {
+        position: absolute;
+        visibility: hidden;
+        top: 50%;
+        text-align: center;
+        width: 68%;
+        margin-left: 16%;
+        margin-right: 16%;
+    }
+
+    .column div:focus p, .column div:hover p {
+        visibility: visible;
+    }
+
+    .column div:focus img, .column div:hover img {
+        filter: brightness(30%)
+    }
+
     .imagesEuro {
         grid-template-columns: 1fr 1fr 1fr;
     }
@@ -192,39 +228,43 @@ footer {
     .imagesEuro .item9 {
         grid-area: 1 / 3 / 1 / 3;
     }
-    
-    .column {
-        flex: 25%;
-        max-width: 25%;
+
+    .imagesEuro .item3 {
+        max-width: 1000px;
     }
 
-    .thomas {
-        margin-left: 50%;
-        margin-right: 5%;
-    }
-
-    .column > div{
+    .imagesEuro > div {
         position: relative;
     }
 
-    .column p {
+    .imagesEuro p {
         position: absolute;
         visibility: hidden;
-        top: 50%;
-        text-align: center;
-        width: 100%;
-
+        bottom: 0%;
+        background-color: #f3663f;
     }
 
-    .column div:focus p, .column div:hover p{
+    .imagesEuro div:focus p, .imagesEuro div:hover p {
         visibility: visible;
     }
 
-    .column div:focus img, .column div:hover img{
-        filter: brightness(30%)
+    .imagesEuro .item7 {
+        grid-column: 2 / 4;
+        max-width: 50%;
     }
 
+    .imagesEuro .item8 {
+        grid-column: 1 / 3;
+        max-width: 50%;
+    }
 
+    .imagesEuro .item10 {
+        max-width: 800px;
+    }
+
+    p {
+        font-size: 18px;
+    }
 
     p.about {
         position: absolute;
@@ -232,8 +272,6 @@ footer {
         margin-top: 8%;
         font-size: 20px;
     }
-
-
 
     nav ul {
         display: grid;
