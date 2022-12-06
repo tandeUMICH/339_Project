@@ -44,8 +44,9 @@ nav ul {
     border: 2px hidden #191919;
 }
 
-.nav_item:focus, .nav_item:hover {
+.nav_item:focus a, .nav_item:hover a{
     text-decoration: overline underline 2px;
+    color: black;
 }
 
 /* change the styling of current page on the navigation */
@@ -57,13 +58,17 @@ body.servicetrip a.servicetrip {
     background-color: white;
 }
 
-nav a:visited{
+a:visited{
     color: #191919;
 }
 
 
 a {
     text-decoration: none;
+}
+
+a:link {
+    color: #191919;
 }
 
 a.skip {
