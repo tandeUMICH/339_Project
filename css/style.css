@@ -209,7 +209,7 @@ footer {
     .column p {
         position: absolute;
         visibility: hidden;
-        top: 50%;
+        top: 20%;
         text-align: center;
         width: 68%;
         margin-left: 16%;
