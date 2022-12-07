@@ -251,7 +251,7 @@ footer {
         background-color: #f3663f;
     }
 
-    .imageseuro div:focus p, .imagesEuro div:hover p {
+    .imageseuro div:focus p, .imageseuro div:hover p {
         visibility: visible;
     }
 
